@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+}
+
+/* navbar */
+.navbar {
+    padding: 0 30px 0 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    color: #9fff76;
+}
+
+.navbar img {
+    width: 90px;
+    margin: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar ul li {
+    margin: 0 50px;
+    font-size: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #9fff76;
+}
+
+.navbar ul li a:hover,
+.footer a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* banner */
+.banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('assets/image/concertt.jpg');;
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    text-align: center;
+    color: white;
+}
+
+.main h1 {
+    font-size: 90px;
+    color: #8c52ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.main p {
+    margin: 20px;
+    max-width: 100%;
+    font-size: 20px;
+}
+
+/* button */
+button.show-btn {
+    width: 200px;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    border: 2px solid #9fff76;
+    background: transparent;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+button.show-btn:hover {
+    background: #9fff76;
+    color: black;
+}
+
+/* coming soon */
+.carousel-item img {
+    padding-top: 10px;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* line up */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 40px;
+    gap: 6rem 5rem;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    background: white;
+    border-radius: 20px;
+    transition: 0.5s ease;
+    max-width: 90%;
+    box-shadow: 2px 2px 5px #8c52ff;
+    margin-top: 10px;
+}
+
+.card:hover {
+    height: 300px;
+}
+
+.img {
+    position: relative;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #444;
+    border-radius: 12px;
+    transition: 0.5s ease;
+    overflow: hidden;
+    margin: 0 auto 80px;
+}
+
+.card:hover .img {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    height: 20px;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.card:hover .content {
+    height: 50%;
+    top: 150px;
+}
+
+.content h3 {
+    font-size: 18px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.content p {
+    margin: 20px;
+    font-size: 14px;
+    color: black;
+    text-transform: lowercase;
+}
+
+/* date */
+.ticket {
+    text-align: center;
+    width: 100%;
+}
+
+.ticket p,
+.ticket i {
+    color: white;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+/* pop up box */
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 680px;
+    height: 550px;
+    padding: 20px 30px;
+    background: white;
+    box-shadow: 2px 2px 10px #9fff76;
+    border-radius: 10px;
+    transition: transform 0ms ease-in-out 200ms;
+}
+
+.popup.active {
+    top: 55%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 200ms ease-in-out 0ms;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: black;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: black;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup .form .form-element {
+    margin: 15px 0;
+}
+
+input[type="text"],
+input[type="email"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #9fff76;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* countdown */
+#nav1 h1, .ticket h1, #upcoming-concerts h1, #nav2 h1 {
+    color: #9fff76;
+    font-size: 45px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.date {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 10px #8c52ff;
+    border-radius: 5px;
+    padding: 5vw;
+    color: white;
+    justify-content: space-between;
+    background-color: white;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 20px;
+    flex-direction: column;
+    flex: 1;
+}
+
+.box span {
+    font-size: 30px;
+}
+
+.box p {
+    font-size: 20px;
+}
+
+/* upcoming concerts */
+.concert-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px; 
+    margin-top: 20px;
+}
+
+.concert-link {
+    width: 48%; 
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.concert-card {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 80px; 
+    height: 80px; 
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    padding: 20px;
+    border: 2px solid #000; 
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease;
+    flex-grow: 1;
+}
+
+.details h3, .details p {
+    margin-bottom: 20px;
+}
+.details:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #8c52ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    border: 2px solid #8c52ff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #9fff76;
+    color: #000;
+    border-color: #9fff76;
+    transform: scale(1.05);
+}
+
+/* footer */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer {
+    background: black;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.col {
+    width: 100%;
+    max-width: 50%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.col h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.col ul li {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.col ul li a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* php */
+.ticket2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    font-size: 25px;
+    color: white;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    color: white;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+
+.ticket2 a {
+    color: white;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+
+    /* navbar */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 30px 0px 30px;
+    }
+
+    .navbar img {
+        width: 70px;
+        margin: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    /* banner */
+    .main h1 {
+        font-size: 60px;
+        max-width: 100%;
+        margin: 10px 15px 10px 15px;
+    }
+
+    .main p {
+        font-size: 20px;
+        max-width: 100%;
+    }
+
+    .button {
+        font-size: 20px;
+        max-width: 100%;
+        padding: 10px 15px;
+    }
+
+    .carousel-item img {
+        max-width: 100%;
+        max-height: 120px;
+        width: 100%;
+    }
+
+    /* line up */
+
+    .img {
+        width: 200px;
+    }
+
+    .content h3 {
+        font-size: 18px;
+    }
+
+    .content p {
+        margin: 5px;
+        font-size: 15px;
+    }
+
+    /* countdown */
+    .countdown {
+        font-size: 35px;
+    }
+
+    .date {
+        flex-direction: column;
+        padding: 3vw;
+    }
+
+    .box {
+        padding: 10px;
+    }
+
+    .box span {
+        font-size: 24px;
+    }
+
+    .box p {
+        font-size: 16px;
+    }
+
+    /* get ticket */
+    .ticket {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .ticket h1 {
+        font-size: 25px;
+    }
+
+    /* footer */
+    .footer {
+        padding: 10px 0;
+    }
+
+    .col {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .col h3 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .col ul li {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* ticket */
+    .ticket {
+        text-align: center;
+        width: 100%;
+        color: var(--green-to-purple);
+    }
+
+    .ticket p {
+        color: white;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .ticket h3 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    #show {
+        align-items: center;
+        margin: 10px 8px 10px 8px;
+        width: 200px;
+        font-size: 15px;
+    }
+
+    .popup.active {
+        top: 90%;
+    }
+
+    .popup {
+        left: 50%;
+        width: 270px;
+    }
+
+    /* Upcoming Concerts */
+    .concert-link {
+        width: 100%; 
+    }
+}

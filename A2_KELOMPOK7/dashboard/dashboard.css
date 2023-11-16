@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #1e1e1e;
+  min-height: 100vh;
+}
+
+header {
+  background-color: black;
+  color: #9fff76;
+  padding: 10px 35px 10px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 100px;
+}
+
+#toggleButton {
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content h2 {
+  color: #333;
+}
+
+#dash-concerts .content,
+#dash-orders .content {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2px;
+  color: white !important;
+}
+
+.col {
+  margin: 0 10px;
+}
+
+main {
+  margin-top: 60px;
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+main.shifted {
+  margin-left: 260px;
+}
+
+h1 {
+  color: #9fff76;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+}
+
+input[type="text"],
+textarea,
+input[type="file"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+
+#category,
+#date {
+  margin-bottom: 20px;
+}
+
+.concerts {
+  margin-top: 30px;
+  padding: 20px;
+  color: white;
+}
+
+.concerts h1 {
+  color: #9fff76;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+tr {
+  background-color: #343a40;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.view {
+  text-decoration: none;
+  background-color:green;
+  color: white;
+}
+
+.edit {
+  text-decoration: none;
+  background-color:orange;
+  color: white;  
+  margin-left: 5px;
+}
+
+.delete {
+  text-decoration: none;
+  background-color:red;
+  color: white;  
+  margin-left: 5px;
+}
+
+.createbtn {
+  background-color: #17a2b8;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.backbtn {
+  background-color: mediumpurple;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.image {
+  height: 200px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image img {
+  width: 100%;
+}
+
+.container-info p {
+  color: white;
+  text-align: center;
+}
+
+/* .container {
+  margin-top: 12rem;
+}
+
+#dash-concerts {
+  background-color: #9fff76;
+  border: 2px solid white;
+}
+
+#dash-orders {
+  background-color: #9fff76;
+  ;
+  border: 2px solid white;
+}
+
+.table {
+  color: white;
+} */
+
+
+/* @media (max-width: 1200px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+} */
+
+@media (max-width: 600px) {
+  .btn {
+    padding: 3px 8px;
+  }
+}
